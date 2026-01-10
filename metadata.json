@@ -1,0 +1,7 @@
+{
+  "name": "MapMyOJT - Premium Placement & Tracking",
+  "description": "A personal and clear platform for students to discover OJT placements via interactive maps, chat with businesses, and track daily work logs.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
