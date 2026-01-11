@@ -6,8 +6,8 @@
 ## ✨ Core Pillars
 
 ### 1. Discovery (Interactive Mapping)
-- **Geospatial Discovery:** Students can explore OJT opportunities through a sleek, dark-themed interactive map powered by Leaflet and CartoDB.
-- **Categorized Filtering:** Effortlessly filter listings by industry (Tech, Design, Engineering, Marketing).
+- **Geospatial Discovery:** Students can explore OJT opportunities through a sleek, dark-themed interactive map.
+- **Categorized Filtering:** Filter listings by industry (Tech, Design, Engineering, Marketing).
 - **Instant Inquiry:** Direct integration with the chat system from any map pin.
 
 ### 2. Real-time Engagement
@@ -15,27 +15,45 @@
 - **Contextual Communication:** Chat history is persisted and linked to specific OJT postings.
 
 ### 3. Performance Tracking (AI-Enhanced)
-- **Work Verification Logs:** Students submit daily accomplishments which are then verified by their supervisors.
+- **Work Verification Logs:** Students submit daily accomplishments verified by supervisors.
 - **Gemini AI Integration:** 
-  - **Log Polishing:** Automatically enhances student task descriptions to sound more professional and impactful.
-  - **Career Insights:** Provides actionable career advice based on student profiles and work history.
+  - **Log Polishing:** Automatically enhances task descriptions to sound professional.
+  - **Career Insights:** Provides actionable career advice.
 
-### 4. Role-Based Dashboards
-- **Students:** Manage profiles, track hours, and discover roles.
-- **Businesses:** Manage OJT slots, verify intern performance, and access AI-driven talent insights.
-- **Coordinators:** Oversee program distribution, verify partner businesses, and track overall success rates.
+## 🚀 Deployment (GitHub Pages)
 
-## 🛠 Tech Stack
+This project is configured for automatic deployment via GitHub Actions.
 
-- **Frontend:** React 19, TypeScript, Tailwind CSS
-- **Mapping:** Leaflet.js with CartoDB Dark Matter tiles
-- **Intelligence:** Google Gemini API (@google/genai)
-- **Styling:** Glassmorphism, OLED-optimized luxury theme, Plus Jakarta Sans typography
-- **State Management:** React Hooks & Local Storage persistence
+### Setup Instructions:
+1. **GitHub Secrets:**
+   - Go to your repository **Settings** > **Secrets and variables** > **Actions**.
+   - Add a **New repository secret** named `API_KEY` with your Google Gemini API Key.
+2. **Enable Pages:**
+   - Go to **Settings** > **Pages**.
+   - Under **Build and deployment** > **Source**, ensure it is set to **GitHub Actions**.
+3. **Push to Main:**
+   - Any push to the `main` branch will trigger the `Deploy to GitHub Pages` workflow.
+
+## 🛠 Local Development
+
+1. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Run Dev Server:**
+   ```bash
+   npm run dev
+   ```
+3. **Build for Production:**
+   ```bash
+   npm run build
+   ```
 
 ## 📂 Project Structure
 
 ```text
+├── .github/workflows/
+│   └── deploy.yml          # GitHub Actions deployment config
 ├── components/
 │   ├── AuthForm.tsx        # Role-based login and registration
 │   ├── DirectChat.tsx      # Real-time messaging interface
@@ -48,23 +66,9 @@
 ├── constants.ts            # Mock data and initial states
 ├── types.ts                # TypeScript interfaces & enums
 ├── App.tsx                 # Main application controller
-└── index.tsx               # Entry point
+├── vite.config.ts          # Build configuration
+└── package.json            # Project metadata & dependencies
 ```
-
-## 🚀 Getting Started
-
-1. **Environment Variable:** Ensure you have a valid Gemini API Key. The app expects `process.env.API_KEY`.
-2. **Installation:** Since this project uses ES modules via CDN imports, you can serve the root directory using any local web server (e.g., `npx serve .`).
-3. **Roles:**
-   - Use the **Register** flow to explore different roles (Student, Business, Coordinator).
-   - Note: Business features require "Verification" which can be bypassed in this demo by switching roles or via the Coordinator dashboard.
-
-## 🔮 Future Roadmap
-
-- [ ] **PDF Resume Export:** Automatically generate professional resumes from OJT logs.
-- [ ] **Certificate Generation:** Auto-issue completion certificates once hour requirements are met.
-- [ ] **Deep Analytics:** Real-time performance graphing for university coordinators.
-- [ ] **Verified Documents:** Secure upload for MOAs and waivers.
 
 ---
 *Built with passion for the next generation of professionals.*
